@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'hook-hub',
 
-  projectId: '12tcbe4h',
+  projectId: 'ywuj37gw',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
