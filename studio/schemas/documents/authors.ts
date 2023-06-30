@@ -20,6 +20,26 @@ export default defineType({
         source: 'name',
         maxLength: 96
       }
-    })
-  ]
+    }),
+    defineField(({
+      title: 'Аватарка:',
+      name: 'profileImage',
+      type: 'customImage'
+    }))
+  ],
+
+  preview: {
+    select: {
+      media: 'profileImage',
+      title: 'name',
+      slug: 'slug'
+    },
+    prepare({media, title, slug}) {
+      return {
+        title,
+        media,
+        subtitle: slug.current
+      }
+    }
+  }
 })
