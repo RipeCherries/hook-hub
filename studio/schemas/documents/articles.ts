@@ -34,6 +34,11 @@ export default defineType({
       title: 'Обложка статьи:',
       name: 'coverImage',
       type: 'customImage'
+    }),
+    defineField({
+      title: "Текст статьи:",
+      name: "body",
+      type: "bodyText"
     })
   ],
 
