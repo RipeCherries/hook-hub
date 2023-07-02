@@ -21,11 +21,16 @@ export default defineType({
         maxLength: 96
       }
     }),
-    defineField(({
+    defineField({
       title: 'Аватарка:',
       name: 'profileImage',
       type: 'customImage'
-    }))
+    }),
+    defineField({
+      title: "Об авторе:",
+      name: "bio",
+      type: "bodyText"
+    })
   ],
 
   preview: {
