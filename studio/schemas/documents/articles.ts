@@ -31,6 +31,21 @@ export default defineType({
       }
     }),
     defineField({
+      title: "Категории",
+      name: "categories",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [
+            {
+              type: "categories"
+            }
+          ]
+        }
+      ]
+    }),
+    defineField({
       title: 'Обложка статьи:',
       name: 'coverImage',
       type: 'customImage'
