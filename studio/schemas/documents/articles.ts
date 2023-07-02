@@ -31,17 +31,27 @@ export default defineType({
       }
     }),
     defineField({
-      title: "Категории",
-      name: "categories",
-      type: "array",
+      title: 'Категории',
+      name: 'categories',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: [
             {
-              type: "categories"
+              type: 'categories'
             }
           ]
+        }
+      ]
+    }),
+    defineField({
+      title: 'Автор:',
+      name: 'author',
+      type: 'reference',
+      to: [
+        {
+          type: 'authors'
         }
       ]
     }),
@@ -51,9 +61,9 @@ export default defineType({
       type: 'customImage'
     }),
     defineField({
-      title: "Текст статьи:",
-      name: "body",
-      type: "bodyText"
+      title: 'Текст статьи:',
+      name: 'body',
+      type: 'bodyText'
     })
   ],
 
