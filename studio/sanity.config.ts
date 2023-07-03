@@ -4,6 +4,8 @@ import {visionTool} from '@sanity/vision'
 import {codeInput} from '@sanity/code-input'
 import {schemaTypes} from './schemas'
 
+import {SidebarList} from './components/SidebarList'
+
 export default defineConfig({
   name: 'default',
   title: 'hook-hub',
@@ -11,7 +13,13 @@ export default defineConfig({
   projectId: 'ywuj37gw',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool(), codeInput()],
+  plugins: [
+    deskTool({
+      structure: SidebarList
+    }),
+    visionTool(),
+    codeInput()
+  ],
 
   schema: {
     types: schemaTypes,
