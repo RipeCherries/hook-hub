@@ -1,21 +1,25 @@
 import {defineField, defineType} from 'sanity'
-import {MdCode} from "react-icons/md"
+import {MdCode} from 'react-icons/md'
 
 export default defineType({
-  title: "Код",
-  name: "customCode",
-  type: "object",
+  title: 'Редактор кода',
+  name: 'customCode',
+  type: 'object',
   icon: MdCode,
   fields: [
     defineField({
-      title: "Код",
-      name: "code",
-      type: "code"
+      title: 'Редактор кода:',
+      name: 'code',
+      type: 'code',
+      options: {
+        withFilename: true
+      }
     })
   ],
+
   preview: {
     select: {
-      title: "code.code"
+      title: 'code.code'
     }
   }
 })
