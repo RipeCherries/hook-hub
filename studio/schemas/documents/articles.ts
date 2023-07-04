@@ -11,66 +11,78 @@ export default defineType({
     defineField({
       title: 'Название статьи:',
       name: 'title',
-      type: 'string'
+      type: 'string',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
-      title: 'Слаг:',
+      title: 'Slug:',
       name: 'slug',
       type: 'slug',
       options: {
         source: 'title',
         maxLength: 96
-      }
+      },
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
       title: 'Дата публикации:',
       name: 'publishedAt',
       type: 'datetime',
       options: {
         dateFormat: 'DD.MM.YYYY'
-      }
+      },
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
-      title: 'Категории',
+      title: 'Категории:',
       name: 'categories',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [
-            {
-              type: 'categories'
-            }
-          ]
+          to: [{type: 'categories'}]
         }
-      ]
+      ],
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
       title: 'Автор:',
       name: 'author',
       type: 'reference',
-      to: [
-        {
-          type: 'authors'
-        }
-      ]
+      to: [{type: 'authors'}],
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
       title: 'Обложка статьи:',
       name: 'coverImage',
-      type: 'customImage'
+      type: 'customImage',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
+    defineField({
+      title: 'Аннотация:',
+      name: 'annotation',
+      type: 'customTextEditor',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
+    }),
+
     defineField({
       title: 'Текст статьи:',
       name: 'body',
-      type: 'bodyText'
+      type: 'customTextEditor',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     })
   ],
 
   preview: {
     select: {
-      media: 'coverImage',
       title: 'title',
+      media: 'coverImage',
       publishedAt: 'publishedAt'
     },
     prepare({media, title, publishedAt}) {
