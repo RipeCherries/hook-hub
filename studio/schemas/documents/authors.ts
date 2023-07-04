@@ -9,34 +9,41 @@ export default defineType({
   fields: [
     defineField({
       title: 'Фамилия и Имя:',
-      name: 'name',
-      type: 'string'
+      name: 'fullName',
+      type: 'string',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
       title: 'Slug:',
       name: 'slug',
       type: 'slug',
       options: {
-        source: 'name',
+        source: 'fullName',
         maxLength: 96
-      }
+      },
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
-      title: 'Аватарка:',
-      name: 'profileImage',
-      type: 'customImage'
+      title: 'Фото профиля:',
+      name: 'authorImage',
+      type: 'customImage',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
-      title: "Об авторе:",
-      name: "bio",
-      type: "bodyText"
+      title: 'Об авторе:',
+      name: 'authorBIO',
+      type: 'customTextEditor',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     })
   ],
 
   preview: {
     select: {
-      media: 'profileImage',
-      title: 'name',
+      title: 'fullName',
+      media: 'authorImage',
       slug: 'slug'
     },
     prepare({media, title, slug}) {
