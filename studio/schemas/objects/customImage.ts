@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 import {MdImage} from 'react-icons/md'
 
 export default defineType({
-  title: 'Изображение',
+  title: 'Изображение:',
   name: 'customImage',
   type: 'image',
   icon: MdImage,
