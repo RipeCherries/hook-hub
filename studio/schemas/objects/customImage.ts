@@ -14,7 +14,7 @@ export default defineType({
       title: 'Описание изображения (alt):',
       name: 'alt',
       type: 'string',
-      validation: (Rule) => Rule.error('Описание изображения не может быть пустым!').required()
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     })
   ]
 })
