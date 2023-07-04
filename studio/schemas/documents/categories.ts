@@ -10,28 +10,36 @@ export default defineType({
     defineField({
       title: 'Название категории:',
       name: 'title',
-      type: 'string'
+      type: 'string',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
-      title: 'Слаг:',
+      title: 'Slug:',
       name: 'slug',
       type: 'slug',
       options: {
         source: 'title',
         maxLength: 96
-      }
+      },
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
-      title: 'Обложка',
+      title: 'Обложка категории:',
       name: 'coverImage',
-      type: 'customImage'
+      type: 'customImage',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     }),
+
     defineField({
-      title: 'Описание',
+      title: 'Описание категории:',
       name: 'description',
-      type: 'bodyText'
+      type: 'customTextEditor',
+      validation: (Rule) => Rule.error('Это поле не может быть пустым!').required()
     })
   ],
+
   preview: {
     select: {
       title: 'title',
