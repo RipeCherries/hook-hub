@@ -2,7 +2,7 @@ import {MdStar} from 'react-icons/md'
 
 export const SidebarList = (S: any) => {
   return S.list()
-    .title('Разделы:')
+    .title('Контент')
     .items([
       S.listItem()
         .title('Избранное')
