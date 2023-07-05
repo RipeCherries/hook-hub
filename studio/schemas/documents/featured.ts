@@ -2,19 +2,20 @@ import {defineField, defineType} from 'sanity'
 import {MdStar} from 'react-icons/md'
 
 export default defineType({
-  title: 'Избранные',
+  title: 'Избранное',
   name: 'featured',
   type: 'document',
   icon: MdStar,
   fields: [
     defineField({
-      title: 'Заголовок',
+      title: 'Заголовок:',
       name: 'title',
       type: 'string'
     }),
+
     defineField({
-      title: 'Избранные статьи',
-      name: 'blog',
+      title: 'Избранные статьи:',
+      name: 'featuredArticles',
       type: 'array',
       of: [
         {
@@ -23,13 +24,14 @@ export default defineType({
         }
       ],
       validation: (Rule) => [
-        Rule.error("Каждый элемент должен быть уникальным!").unique(),
-        Rule.error("Должен существовать хотя бы один элемент!").required()
+        Rule.error('Все элементы в этом списке должны быть уникальными!').unique(),
+        Rule.error('Это поле не может быть пустым!').required()
       ]
     }),
+
     defineField({
-      title: 'Избранные категории',
-      name: 'categories',
+      title: 'Избранные категории:',
+      name: 'featuredCategories',
       type: 'array',
       of: [
         {
@@ -38,8 +40,8 @@ export default defineType({
         }
       ],
       validation: (Rule) => [
-        Rule.error("Каждый элемент должен быть уникальным!").unique(),
-        Rule.error("Должен существовать хотя бы один элемент!").required()
+        Rule.error('Все элементы в этом списке должны быть уникальными!').unique(),
+        Rule.error('Это поле не может быть пустым!').required()
       ]
     })
   ]
