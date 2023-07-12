@@ -16,13 +16,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^5.0.5",
+    "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
+    "gatsby-plugin-styled-components": "^6.11.0",
     "gatsby-source-sanity": "^7.6.3",
     "gatsby-transformer-sharp": "^5.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.3"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
